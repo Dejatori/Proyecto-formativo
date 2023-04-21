@@ -85,9 +85,9 @@ main {
 .post-excerpt p {
     font-size: 16px;
     line-height: 1.5;
-    overflow: hidden;
+    /* overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; */
 }
 
 .post-image {
@@ -145,8 +145,6 @@ main {
     .modal-body p {
         font-size: 16px;
         line-height: 1.5;
-        text-overflow: none;
-        white-space: none;
     }
 
   .close {
