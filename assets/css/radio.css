@@ -1,4 +1,7 @@
 #radio_content {
+    position: fixed;
+    bottom: 10px;
+    z-index: 9999;
     background: #000;
     border-radius: 20px 0 0 20px;
     overflow: hidden;
@@ -6,25 +9,17 @@
     align-items: center;
     padding: 0 10px;
     transition-duration: 1s;
-    position: absolute;
-    bottom: 0;
-    right: -160px;
-    z-index: 9999;
 }
-
 #radio_content.abierto {
     right: 0;
 }
-
 #radio_content.cerrado {
-    right: calc(-160px - 100%);
+    right: -120px;
 }
-
 #radio_content svg {
     color: #fff;
     cursor: pointer;
 }
-
 #radio_content.abierto svg#abrir_radio, #radio_content.cerrado svg#cerrar_radio {
     display: none;
 }
