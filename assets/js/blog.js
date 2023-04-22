@@ -19,6 +19,7 @@
 // }
 
 var modal = document.getElementById("myModal");
+var modal = document.getElementById("myModal2");
 var btn = document.querySelector(".post .btn");
 var span = document.getElementsByClassName("close")[0];
 
