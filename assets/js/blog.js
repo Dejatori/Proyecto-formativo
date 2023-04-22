@@ -1,37 +1,48 @@
-// // Obtener la sección "post" y agregarle un evento "click"
-// var posts = document.getElementsByClassName("post");
-// for (var i = 0; i < posts.length; i++) {
-// 	posts[i].addEventListener("click", function() {
-// 		// Obtener el contenido del post y mostrarlo en un cuadro de diálogo
-// 		var content = this.querySelector("p").innerHTML;
-// 		alert(content);
-		
-// 		// Agregar una clase "selected" al post seleccionado para resaltarlo
-// 		this.classList.add("selected");
-		
-// 		// Quitar la clase "selected" de los demás posts para deseleccionarlos
-// 		for (var j = 0; j < posts.length; j++) {
-// 			if (j != i) {
-// 				posts[j].classList.remove("selected");
-// 			}
-// 		}
-// 	});
-// }
+// Obtener todos los modales y botones de "Leer más"
+let modals = document.querySelectorAll(".modal");
+let buttons = document.querySelectorAll(".post .btn");
 
-var modal = document.getElementById("myModal");
-var btn = document.querySelector(".post .btn");
-var span = document.getElementsByClassName("close")[0];
+// Obtener todos los botones de "Cerrar" dentro de los modales
+let spans = document.querySelectorAll(".close");
 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+// Para cada botón de "Leer más" se agregan los siguientes eventos
+buttons.forEach(function(button, index) {
+  // Obtener el id del modal que corresponde al botón
+  let target = button.getAttribute("data-target");
+  // Agregar evento de "click" al botón de "Leer más" para mostrar el modal
+  button.addEventListener("click", function() {
+    let modalTitle = document.querySelector(target + " .modal-title");
+    modalTitle.classList.add("animate__animated", "animate__bounceInLeft");
+    document.querySelector(target).style.display = "block";
+    document.querySelector(target).classList.add("show");
+    document.querySelector(target + " .modal-content").classList.add("animate__animated", "animate__fadeInRight", "show");
+  });
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
+  // Agregar evento de "click" al botón de "Cerrar" dentro del modal para cerrarlo
+  spans[index].addEventListener("click", function() {
+    let modal = document.querySelector(target);
+    document.querySelector(target).classList.remove("show");
+    modal.classList.add("animate__animated", "animate__rotateOut", "animate__fadeOut");
+    setTimeout(function() {
+      document.querySelector(target).style.display = "none";
+      document.querySelector(target).classList.remove("show");
+      document.querySelector(target + " .modal-content").classList.remove("animate__animated", "animate__fadeInRight");
+      modal.classList.remove("animate__animated", "animate__rotateOut", "animate__fadeOut");
+    }, 1000); // El tiempo de espera en milisegundos debe ser igual a la duración de la animación
+  });
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+  // Agregar evento de "click" al área fuera del modal para cerrarlo
+  window.addEventListener("click", function(event) {
+    let modal = document.querySelector(target);
+    if (event.target === modal) {
+      document.querySelector(target).classList.remove("show");
+      modal.classList.add("animate__animated", "animate__rotateOut", "animate__fadeOut");
+      setTimeout(function() {
+        document.querySelector(target).style.display = "none";
+        document.querySelector(target).classList.remove("show");
+        document.querySelector(target + " .modal-content").classList.remove("animate__animated", "animate__fadeInRight");
+        modal.classList.remove("animate__animated", "animate__rotateOut", "animate__fadeOut");
+      }, 1000); // El tiempo de espera en milisegundos debe ser igual a la duración de la animación
+    }
+  });
+});
