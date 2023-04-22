@@ -1,21 +1,13 @@
-const radioToggle = document.querySelector('.radio-toggle');
-const radioContent = document.querySelector('.radio-content');
-const radioClose = document.querySelector('.radio-close');
+const abrir_radio = document.getElementById('abrir_radio');
+const cerrar_radio = document.getElementById('cerrar_radio');
+const radio_content = document.getElementById('radio_content');
 
-radioToggle.addEventListener('click', function () {
-  if (radioContent.classList.contains('show')) {
-    radioContent.classList.remove('show');
-    radioToggle.setAttribute('aria-expanded', 'false');
-    radioContent.setAttribute('aria-hidden', 'true');
-  } else {
-    radioContent.classList.add('show');
-    radioToggle.setAttribute('aria-expanded', 'true');
-    radioContent.setAttribute('aria-hidden', 'false');
-  }
+abrir_radio.addEventListener('click', function () {
+radio_content.classList.add('abierto');
+radio_content.classList.remove('cerrado');
 });
 
-radioClose.addEventListener('click', function () {
-  radioContent.classList.remove('show');
-  radioToggle.setAttribute('aria-expanded', 'false');
-  radioContent.setAttribute('aria-hidden', 'true');
+cerrar_radio.addEventListener('click', function () {
+radio_content.classList.remove('abierto');
+radio_content.classList.add('cerrado');
 });

@@ -1,49 +1,25 @@
-.radio {
+#radio_content {
     position: fixed;
     bottom: 10px;
-    right: 0;
     z-index: 9999;
-  }
-  
-  .radio-toggle {
-    background-color: #000;
-    color: #fff;
-    border: none;
+    background: #000;
     border-radius: 20px 0 0 20px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .radio-content {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 9998;
-    width: 300px;
-    background-color: #000;
-    padding: 10px;
-    border-radius: 0 0 20px 0;
-    display: none;
-  }
-  
-  .radio-content.show {
-    display: block;
-  }
-  
-  .radio-player {
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
-  
-  .radio-close {
-    background-color: #000;
+    padding: 0 10px;
+    transition-duration: 1s;
+}
+#radio_content.abierto {
+    right: 0;
+}
+#radio_content.cerrado {
+    right: -120px;
+}
+#radio_content svg {
     color: #fff;
-    border: none;
-    border-radius: 0 0 20px 0;
-    padding: 10px;
-    font-size: 16px;
     cursor: pointer;
-  }
+}
+#radio_content.abierto svg#abrir_radio, #radio_content.cerrado svg#cerrar_radio {
+    display: none;
+}
