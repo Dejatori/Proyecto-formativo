@@ -34,35 +34,11 @@ function createEgg() {
   });
 
   var fallInterval = setInterval(function () {
-    var eggRect = egg.getBoundingClientRect();
-    var bottomOverlap =
-      eggRect.bottom - gameContainer.getBoundingClientRect().bottom;
-
-    if (bottomOverlap >= 0) {
-      clearInterval(fallInterval);
-      egg.remove();
-      if (score > 0) {
-        score--;
-      }
-      updateScore();
-    } else {
-      egg.style.top = egg.offsetTop + speed + "px";
-
       if (checkCollision(egg, spikes)) {
         clearInterval(fallInterval);
         endGame();
       }
-    }
-  }, 10);
-
-  setTimeout(function () {
-    clearInterval(fallInterval);
-    egg.remove();
-    if (score > 0) {
-      score--;
-    }
-    updateScore();
-  }, eggInterval);
+    }, 10);
 }
 
 function updateScore() {
@@ -84,7 +60,7 @@ function startGame() {
       updateScore();
       if (score % 5 === 0) {
         speed++;
-        eggInterval -= 500;
+        eggInterval -= 50;
       }
     }
   }, eggInterval);
