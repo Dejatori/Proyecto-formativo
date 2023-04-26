@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Registro</title>
+  <link rel="stylesheet" href="./assets/css/login-registro.css">
+</head>
+
+<body>
+  <div class="container">
+    <!--Register-->
+    <form class="form" id="crear-cuenta">
+      <h1 class="form__titulo">Crear una cuenta</h1>
+      <div class="form__mensaje"></div>
+      <div class="form__grupo-inputs">
+        <label class="form__label" for="registro-nombre">
+          <input class="form__input" id="registro-usuario" type="text" placeholder="Nombre de usuario" autofocus>
+        </label>
+        <div class="form__input-mensaje-error"></div>
+      </div>
+      <div class="form__grupo-inputs">
+        <label class="form__label" for="registro-correo">
+          <input class="form__input" id="registro-correo" type="email" placeholder="Correo electrónico">
+        </label>
+        <div class="form__input-mensaje-error"></div>
+      </div>
+      <div class="form__grupo-inputs">
+        <label class="form__label" for="registro-contraseña">
+          <input class="form__input" id="registro-contraseña" type="password" placeholder="Contraseña">
+        </label>
+        <div class="form__input-mensaje-error"></div>
+      </div>
+      <div class="form__grupo-inputs">
+        <label class="form__label" for="registro-contraseña2">
+          <input class="form__input" id="registro-contraseña2" type="password" placeholder="Confirmar contraseña">
+        </label>
+        <div class="form__input-mensaje-error"></div>
+      </div>
+      <button class="form__boton-submit" type="submit">Continuar</button>
+      <p class="form__texto">
+        <a href="#" class="form__link">¿Olvidaste tu contraseña?</a>
+      </p>
+      <p class="form__texto">
+        <a href="login.html" id="linkLogin" class="form__link">¿Ya tienes una cuenta? Inicia sesión</a>
+      </p>
+    </form>
+  </div>
+  <script type="module" src="./assets/js/registro.js"></script>
+</body>
+
+</html>
