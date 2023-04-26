@@ -3,6 +3,12 @@ var score = 0;
 var scoreDisplay = document.getElementById("score-display");
 var speed = 1;
 var eggInterval = 3000;
+var objective = document.getElementById("win-game");
+
+function win() {
+  objective.textContent = "Debes recoger 25 huevos antes de que caigan a la lava"
+}
+
 
 var spikes = document.createElement("div");
 
@@ -34,6 +40,15 @@ function createEgg() {
   });
 
   var fallInterval = setInterval(function () {
+    var eggRect = egg.getBoundingClientRect();
+    var bottomOverlap =
+      eggRect.bottom - gameContainer.getBoundingClientRect().bottom;
+      if (bottomOverlap >= 0) {
+        clearInterval(fallInterval);
+        egg.remove();
+      } else {
+        egg.style.top = egg.offsetTop + speed + "px";
+      }
       if (checkCollision(egg, spikes)) {
         clearInterval(fallInterval);
         endGame();
@@ -52,7 +67,7 @@ function startGame() {
   updateScore();
   var eggTimer = setInterval(function () {
     createEgg();
-    if (score >= 5) {
+    if (score >= 25) {
       clearInterval(eggTimer);
       endGame();
     } else {
@@ -60,7 +75,7 @@ function startGame() {
       updateScore();
       if (score++) {
         speed++;
-        eggInterval -= 50;
+        eggInterval -= 500;
       }
     }
   }, eggInterval);
