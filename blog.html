@@ -15,9 +15,36 @@
   <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
   <link rel="stylesheet" href="assets/css/blog.css">
   <link id="modo-claro" rel="stylesheet" href="assets/css/modo-claro.css" disabled>
+  <link rel="stylesheet" href="assets/css/juego-gallina.css">
+  <link rel="stylesheet" href="assets/css/juego-gallina-modal.css">
 </head>
 
 <body>
+  <div id="gallina-container">
+    <svg viewBox="0 0 800 100" xmlns="http://www.w3.org/2000/svg" id="juego-gallina">
+      <g id="gallina">
+        <path id="cuerpo" fill="#ffd080" stroke="#000" stroke-width="2" d="M 31 38 Q 50 15 69 38 L 69 68 Q 50 85 31 68 Z" />
+        <path id="alaIzquierda" fill="#ffd080" stroke="#000" stroke-width="2" d="M 50 60 Q 40 60 20 55 Q 5 100 5 50 Q 0 30 32 50 " />
+        <path id="alaDerecha" fill="#ffd080" stroke="#000" stroke-width="2" d="M 50 60 Q 60 60 80 55 Q 75 80 100 70 Q 80 20 68 50" />
+        <path id="pico" fill="#fcb202" stroke="#000" stroke-width="1" d="M 54 53 L 60 55 L 54 58 Z" />
+        <circle id="ojoIzquierdo" fill="#fff" stroke="#000" stroke-width="2" cx="40" cy="45" r="5" />
+        <circle id="pupilaIzquierda" fill="#000" cx="42" cy="45" r="2" />
+        <circle id="ojoDerecho" fill="#fff" stroke="#000" stroke-width="2" cx="60" cy="45" r="5" />
+        <circle id="pupilaDerecha" fill="#000" cx="58" cy="45" r="2" />
+        <path id="cresta" fill="#ff4136" stroke="#000" stroke-width="2" d="M 42 15 Q 50 15 60 30 Q 40 30 60 30 Q 55 55 45 35 Q 40 20 50 30 Z" transform="rotate(-10, 35, 35)" />
+        <path id="barba" fill="#ff4136" stroke="#000" stroke-width="2" d="M 50 65 Q 40 80 50 85 Q 60 80 50 75" transform="rotate(-20, 35, 55)" />
+      </g>
+    </svg>
+    <!-- Modal para el juego -->
+    <div id="game-modal" class="modal-game">
+      <div class="modal-content-game">
+        <span class="close-game" onclick="closeModal()">&times;</span>
+        <div id="game-container"></div>
+        <div id="spikes-container"></div>
+        <div id="score-display"></div>
+      </div>
+    </div>
+  </div>
   <div class="form-check form-switch" style="position: fixed;right: 0;top: 0;z-index: 9999;">
         <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick="cambiarEstilo()">
         <label class="form-check-label" for="flexSwitchCheckDefault">Modo claro</label>
@@ -94,6 +121,10 @@
               de datos pueden explorar y descubrir información oculta en grandes conjuntos de datos que antes era
               difícil de encontrar. Esto permite a las empresas tomar decisiones informadas basadas en datos y no solo
               en suposiciones.</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/e6oXFt3awBA" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -147,6 +178,10 @@
             <p class="animate__animated animate__fadeInRight">En resumen, Big Data es una herramienta poderosa para las empresas que desean tomar decisiones informadas
               basadas en datos. Al utilizar técnicas de análisis avanzado y sistemas de análisis en tiempo real, las
               empresas pueden aprovechar el poder de Big Data para mejorar su negocio y aumentar su rentabilidad.</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Bl2sBiVdZHs" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -219,6 +254,10 @@
               es probable que el aprendizaje automático se convierta en una herramienta cada vez más importante
               para la ciencia de datos, ya que la cantidad de datos que se generan en el mundo sigue aumentando.
             </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3ccgr7-wc6A" title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -272,6 +311,10 @@
               el comportamiento de los clientes, las tendencias del mercado y otros factores importantes, lo que les
               permite mejorar la eficiencia, identificar nuevas oportunidades de negocio y personalizar la experiencia
               del cliente.</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/HYTLfNpMJWk" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -325,6 +368,10 @@
             <p class="animate__animated animate__fadeInRight">En resumen, la ciencia de datos puede ser una herramienta poderosa en la agroindustria. Al analizar datos
               ambientales y meteorológicos, mejorar la calidad de los cultivos y crear modelos predictivos, los agricultores
               y productores pueden tomar decisiones informadas y mejorar la eficiencia y calidad de los productos.</p>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/v5uNCQOWCZY" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -402,6 +449,8 @@
   <script src="assets/js/bs-init.js"></script>
   <script src="assets/js/bold-and-dark.js"></script>
   <script src="assets/js/blog.js"></script>
+  <script src="assets/js/juego-gallina.js"></script>
+  <script src="assets/js/juego-gallina-modal.js"></script>
   <!-- Una radio porque si -->
   <div class="blox mlb kln" style="position: fixed; bottom: 10px; right: 0;">
     <link rel="stylesheet" href="assets/css/radio.css">
