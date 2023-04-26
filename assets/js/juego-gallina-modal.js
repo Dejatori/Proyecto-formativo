@@ -6,7 +6,7 @@ var eggInterval = 3000;
 var objective = document.getElementById("win-game");
 
 function win() {
-  objective.textContent = "Debes recoger 25 huevos antes de que caigan a la lava"
+  objective.textContent = "Debes recoger 25 huevos antes de que caigan a la lava";
 }
 
 
