@@ -58,7 +58,7 @@ function startGame() {
     } else {
       score++;
       updateScore();
-      if (score % 5 === 0) {
+      if (score++) {
         speed++;
         eggInterval -= 50;
       }
