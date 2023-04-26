@@ -5,11 +5,6 @@ var speed = 1;
 var eggInterval = 3000;
 var objective = document.getElementById("win-game");
 
-function win() {
-  objective.textContent = "Debes recoger 25 huevos antes de que caigan a la lava";
-}
-
-
 var spikes = document.createElement("div");
 
 spikes.className = "spikes";
@@ -58,6 +53,10 @@ function createEgg() {
 
 function updateScore() {
   scoreDisplay.textContent = "Score: " + score;
+}
+
+function win() {
+  objective.textContent = "Debes recoger 25 huevos antes de que caigan a la lava";
 }
 
 function startGame() {
