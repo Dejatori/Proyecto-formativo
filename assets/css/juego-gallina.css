@@ -1,0 +1,37 @@
+#gallina-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #gallina-container.active {
+    top: 0;
+    left: 0;
+    min-width: 50px;
+    min-height: 50px;
+  }
+  /* Esto hará que la gallina aparezca cada 10 segundos */
+   #gallina-container {
+    animation: appear 5s linear infinite;
+  }
+
+  @keyframes appear {
+    0% {
+      display: none;
+    }
+    10% {
+      display: block;
+    }
+    100% {
+      display: block;
+    }
+  } 
+#gallina {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+#juego-gallina {
+    min-width: 50px;
+    min-height: 50px;
+} 

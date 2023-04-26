@@ -4,14 +4,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="NightDevs" name="Brayan">
     <title>Projects - NightDevs</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link id="modo-claro" rel="stylesheet" href="assets/css/modo-claro.css" disabled>
 </head>
 
 <body>
+    <div class="form-check form-switch" style="position: fixed;right: 0;top: 0;z-index: 9999;">
+        <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick="cambiarEstilo()">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Modo claro</label>
+    </div>
+    <script>
+        function cambiarEstilo() {
+          var modoClaro = document.getElementById("modo-claro");
+          if (modoClaro.disabled) {
+            modoClaro.disabled = false;
+          } else {
+            modoClaro.disabled = true;
+          }
+        }
+    </script>
 <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span
             class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><i
@@ -24,7 +42,7 @@
                 <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
                 <li class="nav-item"><a class="nav-link active" href="proyectos.html">Proyecto</a></li>
                 <li class="nav-item"><a class="nav-link" href="equipo.html">Equipo</a></li>
-                <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             </ul>
         </div>
     </div>
