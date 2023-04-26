@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="es">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Inicio de sesión</title>
+  <link rel="stylesheet" href="./assets/css/login-registro.css">
+</head>
+
+<body>
+  <div class="container">
+    <!--Login-->
+    <form class="form" id="iniciar-sesion">
+      <h1 class="form__titulo">Iniciar Sesión</h1>
+      <div class="form__mensaje" data-form-login="alerta"></div>
+      <div class="form__grupo-inputs">
+        <label class="form__label" for="login-identidad">
+          <input class="form__input" id="login-identidad" type="text" placeholder="Nombre de usuario o email" autofocus
+            required>
+        </label>
+        <div class="form__input-mensaje-error"></div>
+      </div>
+      <div class="form__grupo-inputs">
+        <label class="form__label" for="login-clave">
+          <input class="form__input" id="login-clave" type="password" placeholder="Contraseña" required>
+        </label>
+        <div class="form__input-mensaje-error"></div>
+      </div>
+      <button class="form__boton-submit" id="login-submit" type="submit">Continuar</button>
+      <p class="form__texto">
+        <a href="#" class="form__link">¿Olvidaste tu contraseña?</a>
+      </p>
+      <p class="form__texto">
+        <a href="registro.html" id="linkRegister" class="form__link">¿No tienes una cuenta? Crea una</a>
+      </p>
+    </form>
+  </div>
+  <script type="module" src="./assets/js/login.js"></script>
+</body>
+</html>
