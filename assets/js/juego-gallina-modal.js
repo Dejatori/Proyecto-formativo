@@ -1,5 +1,6 @@
 var gameContainer = document.getElementById("game-container");
 var score = 0;
+var scoreDisplay = document.getElementById("score-display");
 var speed = 1;
 var eggInterval = 3000;
 
@@ -65,7 +66,7 @@ function createEgg() {
 }
 
 function updateScore() {
-  document.getElementById("score-display").textContent = "Score: " + score;
+  scoreDisplay.textContent = "Score: " + score;
 }
 
 function startGame() {
