@@ -9,6 +9,23 @@
 </head>
 
 <body>
+  <!-- Tema claro -->
+  <div class="form-check form-switch" style="position: fixed;right: 0;top: 0;z-index: 9999;">
+    <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick=cambiarEstilo()>
+    <label class="form-check-label" for="flexSwitchCheckDefault">Modo claro</label>
+</div>
+<script>
+    function cambiarEstilo() {
+      var modoClaro = document.getElementById("modo-claro");
+      if (modoClaro.disabled) {
+        modoClaro.disabled = false;
+      } else if (!modoClaro.disabled) {
+        modoClaro.disabled = true;
+      } else {
+        false;
+      }
+    }
+</script>
   <div class="container">
     <!--Login-->
     <form class="form" id="iniciar-sesion">
