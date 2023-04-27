@@ -93,7 +93,7 @@ body {
   display: block;
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid var(--bs-primary);
+  border: 2px solid var(--bs-primary);
   border-radius: var(--border-radius);
   outline: none;
   background: var(--bs-light);
@@ -108,9 +108,8 @@ body {
 }
 
 .form__input--error {
-  color: var(--bs-danger);
-  border-width: 2px;
   border-color: var(--bs-danger);
+  color: var(--bs-danger);
 }
 .form__input--acierto {
   color: fieldtext;
