@@ -3,4 +3,4 @@ const CLASS_TYPES = {
     ACIERTO: "form__input--acierto"
 };
 
-export {CLASS_TYPES};
+export default CLASS_TYPES;

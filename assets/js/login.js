@@ -1,4 +1,4 @@
-import { CLASS_TYPES } from "./classTypes.js";
+import CLASS_TYPES from "./classTypes.js";
 
 const identidad = document.getElementById('login-identidad');
 const clave = document.getElementById('login-clave');

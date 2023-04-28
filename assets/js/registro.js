@@ -1,4 +1,4 @@
-import { CLASS_TYPES } from "./classTypes.js";
+import CLASS_TYPES from "./classTypes.js";
 
 const usuario = document.getElementById('registro-usuario');
 const correo = document.getElementById('registro-correo');
@@ -45,7 +45,3 @@ contraseña2.addEventListener('blur', () => {
     contraseña2.classList.add(CLASS_TYPES.ACIERTO)
   }
 });
-
-const Usuarios = [
-  "jorge"
-];
