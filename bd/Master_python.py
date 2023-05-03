@@ -33,3 +33,5 @@ except mysql.connector.Error as error:
 finally:
     # Cerrar cursor
     cursor.close()
+
+# Cambio
