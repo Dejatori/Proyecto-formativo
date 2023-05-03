@@ -42,24 +42,27 @@
         <div id="game-container"></div>
         <div id="spikes-container"></div>
         <div id="score-display"></div>
-        <div id="win-game"></div>
+        <div id="objective-game"></div>
       </div>
     </div>
   </div>
+  <!-- Tema claro -->
   <div class="form-check form-switch" style="position: fixed;right: 0;top: 0;z-index: 9999;">
-        <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick="cambiarEstilo()">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Modo claro</label>
-    </div>
-    <script>
-        function cambiarEstilo() {
-          var modoClaro = document.getElementById("modo-claro");
-          if (modoClaro.disabled) {
-            modoClaro.disabled = false;
-          } else {
-            modoClaro.disabled = true;
-          }
-        }
-    </script>
+    <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick=cambiarEstilo()>
+    <label class="form-check-label" for="boton-modo-claro">Modo claro</label>
+</div>
+<script>
+    function cambiarEstilo() {
+      var modoClaro = document.getElementById("modo-claro");
+      if (modoClaro.disabled) {
+        modoClaro.disabled = false;
+      } else if (!modoClaro.disabled) {
+        modoClaro.disabled = true;
+      } else {
+        false;
+      }
+    }
+</script> 
   <nav class="navbar navbar-dark navbar-expand-md sticky-top py-3" id="mainNav">
     <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span
           class="bs-icon-sm bs-icon-circle bs-icon-primary shadow d-flex justify-content-center align-items-center me-2 bs-icon"><i

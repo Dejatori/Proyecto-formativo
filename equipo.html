@@ -9,6 +9,7 @@
     <title>Equipo - NightDevs</title>
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Inter:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
@@ -16,17 +17,20 @@
 </head>
 
 <body>
+    <!-- Tema claro -->
     <div class="form-check form-switch" style="position: fixed;right: 0;top: 0;z-index: 9999;">
-        <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick="cambiarEstilo()">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Modo claro</label>
+        <input class="form-check-input" type="checkbox" id="boton-modo-claro" onclick=cambiarEstilo()>
+        <label class="form-check-label" for="boton-modo-claro">Modo claro</label>
     </div>
     <script>
         function cambiarEstilo() {
           var modoClaro = document.getElementById("modo-claro");
           if (modoClaro.disabled) {
             modoClaro.disabled = false;
-          } else {
+          } else if (!modoClaro.disabled) {
             modoClaro.disabled = true;
+          } else {
+            false;
           }
         }
     </script>
@@ -103,6 +107,7 @@
                 height="272px"><img data-aos="zoom-in-up" src="assets/img/gallina_comiendo.jpg"
                 width="400px" height="320px" style="text-align: center;background: radial-gradient(black, white 100%), radial-gradient(black 0%, rgb(94,94,94) 90%, white); display: inline;overflow: clip;transform: perspective(0px); filter:brightness(106%) contrast(108%) grayscale(3%);">
         </div>
+    </div>
 </section>
 <footer class="bg-dark">
     <div class="container py-4 py-lg-5">
