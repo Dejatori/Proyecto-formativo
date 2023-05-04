@@ -4,7 +4,8 @@ import mysql.connector
 database = mysql.connector.connect(
     host = "localhost",
     user = "root",
-    passwd = ""
+    passwd = "",
+    database = "clinicas_oftalmologicas"
 )
 
 # ¿La conexion fue exitosa?
@@ -13,6 +14,12 @@ database = mysql.connector.connect(
 # Crear la base de datos
 
 cursor = database.cursor()
+"""
+
+
+cursor.execute("CREATE DATABASE IF NOT EXISTS clinicas_oftalmologicas")
+
+cursor.execute("USE clinicas_oftalmologicas")
 
 try:
     # Listar bases de datos
@@ -34,4 +41,21 @@ finally:
     # Cerrar cursor
     cursor.close()
 
-# Cambio
+# Usar base de datos
+cursor.execute("USE clinicas_oftalmologicas")
+"""
+
+#cursor.execute("USE clinicas_oftalmologicas")
+
+# Crear tablas
+cursor.execute("""CREATE TABLE IF NOT EXISTS Pacientes 
+               (Dni TEXT(12) not null, 
+                Nombre TEXT(255) not null, 
+                Fecha_Nac DATE not null, 
+                Direccion VARCHAR(255) not null, 
+                CONSTRAINT pk_Paciente PRIMARY KEY (Dni(12)))""")
+
+
+cursor.execute("SHOW TABLES")
+for table in cursor:
+    print(table)
